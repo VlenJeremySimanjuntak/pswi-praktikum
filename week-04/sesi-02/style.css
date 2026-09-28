@@ -1,0 +1,39 @@
+/* 1. Verifikasi Koneksi Stylesheet */
+body {
+  background: #f4f6fa;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1.5rem;
+}
+
+/* 2. Selector dan Class */
+form.card {
+  padding: 1rem;
+  background: white;
+}
+
+.notice {
+  color: #175cd3;
+}
+
+/* 3. Eksperimen Konflik Specificity (Cascade) */
+/* .card p memiliki bobot 0-1-1, sedangkan .notice memiliki bobot 0-1-0 */
+.card p {
+  color: purple;
+}
+
+.notice {
+  color: orange;
+}
+
+/* 4. Eksperimen Box Model */
+/* Ukuran eksperimen untuk mengukur perbedaan content-box vs border-box */
+.card {
+  width: 240px;
+  padding: 16px;
+  border: 2px solid #445;
+  margin: 12px;
+  
+  /* Aktifkan baris di bawah untuk membuktikan perubahan lebar dari 276px ke 240px */
+  box-sizing: border-box;
+}

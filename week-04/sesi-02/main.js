@@ -1,0 +1,1 @@
+console.log("Script modul Minggu 4 Sesi 2 berhasil termuat.");
