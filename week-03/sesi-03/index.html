@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pendaftaran Kegiatan - Validasi dan Aksesibilitas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Pendaftaran Kegiatan Kampus</h1>
+    <p>Silakan isi formulir di bawah ini. Kolom bertanda wajib harus dilengkapi.</p>
+
+    <!-- Dokumentasi Lokasi Kegiatan -->
+    <figure>
+      <img src="lokasi.jpg" alt="Pintu masuk aula berada di sisi timur gedung" width="600" height="400">
+      <figcaption>Lokasi kegiatan: aula kampus.</figcaption>
+    </figure>
+
+    <form action="" method="get">
+      <!-- 1. Input Teks Nama Lengkap -->
+      <p>
+        <label for="nama">Nama lengkap (wajib)</label><br>
+        <input id="nama" name="nama" type="text" autocomplete="name" required>
+      </p>
+
+      <!-- 2. Input Email -->
+      <p>
+        <label for="email">Email (wajib)</label><br>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+      </p>
+
+      <!-- 3. Pilihan Program Studi -->
+      <p>
+        <label for="prodi">Program studi (wajib)</label><br>
+        <select id="prodi" name="prodi" required>
+          <option value="">Pilih program studi</option>
+          <option value="trpl">D4 TRPL</option>
+          <option value="ti">D3 Teknologi Informasi</option>
+        </select>
+      </p>
+
+      <!-- 4. Batasan Kuantitas Tiket (min, max, step) -->
+      <p>
+        <label for="jumlah">Jumlah tiket (1-5, wajib)</label><br>
+        <input id="jumlah" name="jumlah" type="number" min="1" max="5" step="1" required>
+      </p>
+
+      <!-- 5. Kode Peserta dengan Pattern dan Deskripsi Terhubung -->
+      <p>
+        <label for="kode">Kode peserta (6 angka, wajib)</label><br>
+        <small id="kode-help">Contoh: 001234. Gunakan tepat enam digit angka.</small><br>
+        <input id="kode" name="kode" type="text" inputmode="numeric" pattern="[0-9]{6}" aria-describedby="kode-help" required>
+      </p>
+
+      <!-- 6. Pilihan Radio: Mode Kehadiran -->
+      <fieldset>
+        <legend>Mode kehadiran (wajib)</legend>
+        <input id="luring" name="mode" type="radio" value="luring" required>
+        <label for="luring">Luring</label>
+        
+        <input id="daring" name="mode" type="radio" value="daring">
+        <label for="daring">Daring</label>
+      </fieldset>
+
+      <!-- 7. Pilihan Checkbox: Minat Topik -->
+      <fieldset>
+        <legend>Minat topik (opsional)</legend>
+        <input id="topik-html" name="minat" type="checkbox" value="html">
+        <label for="topik-html">HTML Semantik</label>
+
+        <input id="topik-aksesibilitas" name="minat" type="checkbox" value="aksesibilitas">
+        <label for="topik-aksesibilitas">Aksesibilitas Web</label>
+      </fieldset>
+
+      <!-- 8. Catatan Tambahan -->
+      <p>
+        <label for="catatan">Catatan (opsional)</label><br>
+        <textarea id="catatan" name="catatan" rows="4" maxlength="300"></textarea>
+      </p>
+
+      <!-- 9. Tombol Submit -->
+      <p>
+        <button type="submit">Kirim Pendaftaran</button>
+      </p>
+    </form>
+  </main>
+</body>
+</html>
