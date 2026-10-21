@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Profil dan program Komunitas Web Mahasiswa.">
+    <title>Beranda | Komunitas Web Mahasiswa</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Komunitas Web Mahasiswa</h1>
+            <p>Belajar, berbagi, dan membangun situs bersama.</p>
+            <nav aria-label="Navigasi utama">
+                <ul class="nav-list">
+                    <li><a href="#kegiatan">Kegiatan</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Pembungkus agar Main dan Aside berjajar rapi -->
+    <div class="container layout-wrapper">
+        
+        <main id="kegiatan">
+            <h1 class="section-title">Kegiatan Mahasiswa</h1>
+            <div class="cards">
+                <article class="card">
+                    <h2 class="normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</h2>
+                    <p>Belajar struktur. Teks normal dengan spasi akan rapi secara otomatis.</p>
+                </article>
+                <article class="card">
+                    <h2 class="yes">IniAdalahContohKataYangSangatPanjangSekaliTanpaSpasiSamaSekaliUntukMengetesFungsiCSS</h2>
+                    <p>Belajar tampilan. Teks ini <strong>berhasil dipotong</strong> karena class "yes".</p>
+                </article>
+                <article class="card">
+                    <h2 class="no">IniAdalahContohKataYangSangatPanjangSekaliTanpaSpasiSamaSekaliUntukMengetesFungsiCSS</h2>
+                    <p>Menguji kualitas. Teks ini <strong>sengaja dibiarkan bablas/rusak</strong> karena class "no".</p>
+                </article>
+            </div>
+        </main>
+
+        <aside>
+            <div class="aside-box">
+                <h2>Informasi Singkat</h2>
+                <p>Pertemuan mingguan diadakan rutin setiap Jumat sore di laboratorium komputer.</p>
+            </div>
+
+            <!-- Area Live Coding JavaScript -->
+            <div class="aside-box js-widget">
+                <h3>Dukung Komunitas!</h3>
+                <p>Skor saat ini: <strong id="angka-skor">0</strong></p>
+                <button id="tombol-dukung" class="btn">Beri Dukungan (+1)</button>
+            </div>
+        </aside>
+
+    </div>
+
+    <footer id="kontak">
+        <div class="container">
+            <p>&copy; 2026 Komunitas Web Mahasiswa.</p>
+            <address>
+                Pertanyaan dapat dikirim melalui <a href="kontak.html">halaman kontak</a> atau email ke <a href="mailto:web@example.ac.id">web@example.ac.id</a>.
+            </address>
+        </div>
+    </footer>
+
+    <!-- Memanggil otak website (JavaScript) di paling bawah -->
+    <script src="test.js"></script>
+
+</body>
+</html>

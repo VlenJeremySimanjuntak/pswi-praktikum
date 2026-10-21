@@ -1,0 +1,39 @@
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+.catalog {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card {
+    flex: 1 1 15rem;
+    padding: 1rem;
+    border: 1px solid #ccd;
+    min-width: 0;
+}
+
+.card h2.normal {
+    /* Sengaja dibiarkan kosong, teks berspasi otomatis turun ke bawah */
+}
+
+/* 2. Teks tanpa spasi DENGAN overflow-wrap (Dipaksa potong) */
+.card h2.yes {
+    overflow-wrap: anywhere;
+}
+
+.card h2.no {
+    /* Sengaja dibiarkan kosong untuk melihat hancurnya layout */
+}

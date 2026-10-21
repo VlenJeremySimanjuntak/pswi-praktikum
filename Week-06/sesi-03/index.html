@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praktikum W06S03 - Gambar Responsif & Container Query</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="page-container">
+    <header class="hero-header">
+      <span class="badge">Eksperimen Modul 6 Sesi 3</span>
+      <h1>Gambar Responsif & Preferensi Pengguna</h1>
+      <p class="subtitle">Uji coba fluid typography, container query bertingkat, dan pengalihan resolusi layar.</p>
+    </header>
+
+    <!-- Panel Kontrol Simulasi Container -->
+    <section class="control-card">
+      <div class="control-header">
+        <h2>Kontrol Simulasi Kontainer</h2>
+        <p>Gunakan tombol ini untuk mengubah lebar wadah kartu secara langsung tanpa mengubah viewport browser.</p>
+      </div>
+
+      <div class="control-action">
+        <button type="button" id="btn-toggle-container" class="btn-primary">
+          Ubah Ukuran Kontainer Kartu
+        </button>
+      </div>
+
+      <div id="status-card" class="status-box is-default">
+        <div class="status-indicator"></div>
+        <div class="status-text">
+          <strong id="status-title">Status Kontainer: Lebar Standar (100%)</strong>
+          <span id="container-status">Container query (min-width: 30rem) aktif saat ruang mencukupi.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kartu Demonstrasi Container Query -->
+    <section class="demo-section">
+      <div class="card-wrap" id="card-wrapper">
+        <article class="card">
+          <div class="card-image-wrap">
+            <img src="assets/foto-640.jpg"
+                 srcset="assets/foto-320.jpg 320w, assets/foto-640.jpg 640w"
+                 sizes="(min-width: 64rem) 30vw, (min-width: 48rem) 45vw, 92vw"
+                 width="640" height="360"
+                 alt="Kegiatan diskusi kolaboratif mahasiswa">
+          </div>
+          <div class="card-body">
+            <h2>Diskusi Kolaboratif Mahasiswa</h2>
+            <p>Kartu ini memadukan gambar responsif <code>srcset/sizes</code> dengan CSS Container Query. Saat ukuran pembungkus dipersempit lewat tombol kontrol, tata letak padding dan perataan kartu ikut beradaptasi secara otomatis.</p>
+            <span class="meta-tag">Dokumentasi Praktikum</span>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

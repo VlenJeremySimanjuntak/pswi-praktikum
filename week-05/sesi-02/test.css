@@ -1,0 +1,208 @@
+/* =========================================
+   1. PENGATURAN DASAR & VARIABEL (Buku SOP)
+   ========================================= */
+:root {
+    --brand: #175cd3;         /* Biru khas utama */
+    --brand-hover: #1246a3;   /* Biru saat tombol disorot */
+    --surface: #ffffff;       /* Putih bersih untuk kartu */
+    --background: #f4f7f6;    /* Abu-abu sangat terang untuk latar belakang */
+    --ink: #243244;           /* Biru gelap keabu-abuan untuk teks */
+    --ink-light: #5c6c7f;     /* Teks sekunder (lebih pudar) */
+    --space: 1rem;            /* Jarak standar 16px */
+}
+
+/* Kunci agar padding tidak bikin elemen melar */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background);
+    color: var(--ink);
+    line-height: 1.6;
+}
+
+/* Pembungkus agar konten selalu di tengah dan tidak terlalu melebar */
+.container {
+    width: 90%;
+    max-width: 65rem; /* Maksimal sekitar 1040px */
+    margin-inline: auto;
+}
+
+/* =========================================
+   2. BAGIAN HEADER & NAVIGASI
+   ========================================= */
+header {
+    background-color: var(--brand);
+    color: var(--surface);
+    padding: 3rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header p {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.nav-list a {
+    color: var(--surface);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+.nav-list a:hover {
+    background-color: var(--surface);
+    color: var(--brand);
+}
+
+/* =========================================
+   3. TATA LETAK UTAMA (MAIN & ASIDE)
+   ========================================= */
+.layout-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+main {
+    flex: 3 1 40rem; /* Main akan mengambil porsi lebih besar */
+}
+
+aside {
+    flex: 1 1 18rem; /* Aside mengambil porsi lebih kecil di samping */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.section-title {
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.5rem;
+}
+
+/* =========================================
+   4. KARTU (CARDS) & EKSPERIMEN TEKS
+   ========================================= */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.card {
+    flex: 1 1 15rem;
+    padding: 1.5rem;
+    background: var(--surface);
+    border-radius: 8px;
+    border: 1px solid #e1e4e8;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    min-width: 0; 
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Efek kartu sedikit terangkat saat disorot mouse */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.card p {
+    color: var(--ink-light);
+    margin-top: 0.5rem;
+}
+
+/* EKSPERIMEN OVERFLOW (Ini yang dipelajari di kelas) */
+.card h2.normal {
+    /* Dibiarkan kosong, mengikuti bawaan browser */
+}
+.card h2.yes {
+    overflow-wrap: anywhere; /* Teks akan dipotong paksa jika kepanjangan */
+    color: #059669; /* Warna hijau agar terlihat beda */
+}
+.card h2.no {
+    /* Dibiarkan kosong, layout akan bablas memanjang */
+    color: #dc2626; /* Warna merah sebagai tanda bahaya/error */
+}
+
+/* =========================================
+   5. ASIDE & TOMBOL WIDGET JS
+   ========================================= */
+.aside-box {
+    background: var(--surface);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border: 1px solid #e1e4e8;
+}
+
+.js-widget {
+    background-color: #eef2f6;
+    border: 2px dashed var(--brand);
+}
+
+#angka-skor {
+    font-size: 1.5rem;
+    color: var(--brand);
+}
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background-color: var(--brand);
+    color: var(--surface);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn:hover {
+    background-color: var(--brand-hover);
+}
+
+.btn:active {
+    transform: scale(0.95); /* Efek tombol tertekan */
+}
+
+/* =========================================
+   6. FOOTER
+   ========================================= */
+footer {
+    background-color: var(--ink);
+    color: var(--surface);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: auto;
+}
+
+footer a {
+    color: #82b1ff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Katalog Kampus - Mobile First</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand">IT Del Catalog</a>
+      <nav aria-label="Navigasi Utama">
+        <ul class="nav-list">
+          <li><a href="#katalog">Katalog</a></li>
+          <li><a href="#form-uji">Pendaftaran Layanan</a></li>
+          <li><a href="#uji-overflow">Simulasi Uji & Overflow</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="katalog" class="section">
+      <div class="section-head">
+        <h1>Layanan & Fasilitas Akademik</h1>
+        <p>Tampilan otomatis menyesuaikan layar mulai dari 320px (1 kolom) hingga 48rem / 768px (2 kolom).</p>
+      </div>
+
+      <div class="catalog" id="catalog-list">
+        <article class="card">
+          <img src="https://picsum.photos/seed/del10/600/340" alt="Ruang Laboratorium Komputer">
+          <div class="card-body">
+            <span class="badge">Laboratorium</span>
+            <h2>Lab Pemrograman Web</h2>
+            <p>Fasilitas praktikum pengembangan antarmuka web responsif dan pengujian lintas perangkat.</p>
+            <a href="#form-uji" class="card-link">Ajukan Peminjaman &rarr;</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://picsum.photos/seed/del20/600/340" alt="Server Hosting Kampus">
+          <div class="card-body">
+            <span class="badge">Infrastruktur</span>
+            <h2>Hosting Proyek Mahasiswa</h2>
+            <p>Layanan ruang penyimpanan aplikasi web untuk kebutuhan tugas akhir dan praktikum.</p>
+            <a href="#form-uji" class="card-link">Ajukan Peminjaman &rarr;</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://picsum.photos/seed/del30/600/340" alt="Perangkat Pengujian Mobile">
+          <div class="card-body">
+            <span class="badge">Perangkat</span>
+            <h2>Kit Uji Multi-Viewport</h2>
+            <p>Perangkat pengujian tampilan mobile 320px, tablet 768px, hingga layar monitor besar 1200px.</p>
+            <a href="#form-uji" class="card-link">Ajukan Peminjaman &rarr;</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://picsum.photos/seed/del40/600/340" alt="Buku dan Referensi Digital">
+          <div class="card-body">
+            <span class="badge">Aksesibilitas</span>
+            <h2>Modul Audit WCAG 2.2</h2>
+            <p>Panduan standar kontras warna, uji perbesaran zoom 200%, dan navigasi fokus keyboard.</p>
+            <a href="#form-uji" class="card-link">Ajukan Peminjaman &rarr;</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="form-uji" class="section">
+      <div class="panel">
+        <h2>Formulir Pendaftaran Layanan</h2>
+        <form id="test-form" novalidate>
+          <div class="field">
+            <label for="nama-lengkap">Nama Lengkap Mahasiswa Beserta Nomor Induk Mahasiswa (Contoh Label Panjang yang Membungkus Rapi pada Layar Sempit)</label>
+            <input type="text" id="nama-lengkap" placeholder="Masukkan Nama dan NIM..." required>
+          </div>
+
+          <div class="field">
+            <label for="layanan">Pilih Layanan yang Diajukan</label>
+            <select id="layanan">
+              <option value="lab">Lab Pemrograman Web</option>
+              <option value="hosting">Hosting Proyek Mahasiswa</option>
+              <option value="kit">Kit Uji Multi-Viewport</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="catatan">Keperluan / Catatan Pengujian</label>
+            <textarea id="catatan" rows="3" placeholder="Tuliskan keperluan atau hasil pengamatan..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary">Kirim Pengajuan</button>
+          <p id="form-feedback" class="feedback" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="uji-overflow" class="section">
+      <div class="panel panel-test">
+        <h2>Panel Simulasi Praktikum (Bagian 6 & 7)</h2>
+        <p>Gunakan tombol berikut untuk mengambil bukti <strong>Before-After Overflow 900px</strong> dan menguji <strong>Data Panjang</strong>.</p>
+        <div class="action-row">
+          <button type="button" id="btn-overflow" class="btn-outline">Simulasi Overflow 900px (Before/After)</button>
+          <button type="button" id="btn-longtext" class="btn-outline">Tambah Kartu Teks Panjang</button>
+        </div>
+        <div id="overflow-box" class="overflow-box">
+          Status Normal (After): Lebar kotak ini mengikuti max-width: 100% sehingga aman di layar 320px.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html> 

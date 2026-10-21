@@ -1,0 +1,1 @@
+console.log('main.js berhasil dijalankan pada halaman:', document.title);

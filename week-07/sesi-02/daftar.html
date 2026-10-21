@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Formulir pendaftaran kegiatan Komunitas Web Mahasiswa.">
+  <title>Pendaftaran Kegiatan | Komunitas Web Mahasiswa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav aria-label="Navigasi utama">
+      <a href="index.html">Beranda</a>
+      <a href="kegiatan.html">Kegiatan</a>
+      <a href="daftar.html" aria-current="page">Daftar</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Pendaftaran Kegiatan</h1>
+
+    <figure>
+      <img src="assets/lokasi.jpg" width="640" height="360" alt="Lokasi kegiatan">
+      <figcaption>Lokasi kegiatan: aula kampus.</figcaption>
+    </figure>
+
+    <form class="card" action="" method="get">
+      <p class="notice">Kolom bertanda wajib harus diisi.</p>
+
+      <label for="nama">Nama lengkap (wajib)</label>
+      <input id="nama" name="nama" type="text" autocomplete="name" required>
+
+      <label for="email">Email (wajib)</label>
+      <input id="email" name="email" type="email" autocomplete="email" required>
+
+      <label for="prodi">Program studi (wajib)</label>
+      <select id="prodi" name="prodi" required>
+        <option value="">Pilih program studi</option>
+        <option value="trpl">D4 TRPL</option>
+        <option value="ti">D3 Teknologi Informasi</option>
+      </select>
+
+      <label for="jumlah">Jumlah tiket (1-5, wajib)</label>
+      <input id="jumlah" name="jumlah" type="number" min="1" max="5" step="1" required>
+
+      <label for="kode">Kode peserta (6 angka, wajib)</label>
+      <p id="kode-help" class="notice">Contoh: 001234. Gunakan tepat enam angka.</p>
+      <input id="kode" name="kode" type="text" inputmode="numeric" pattern="[0-9]{6}" aria-describedby="kode-help" required>
+
+      <fieldset>
+        <legend>Mode kehadiran (wajib)</legend>
+        <div>
+          <input id="luring" name="mode" type="radio" value="luring" required>
+          <label for="luring">Luring</label>
+        </div>
+        <div>
+          <input id="daring" name="mode" type="radio" value="daring">
+          <label for="daring">Daring</label>
+        </div>
+      </fieldset>
+
+      <label for="catatan">Catatan (opsional)</label>
+      <textarea id="catatan" name="catatan" rows="4" maxlength="300"></textarea>
+
+      <button type="submit">Daftar</button>
+    </form>
+  </main>
+
+  <footer id="kontak">
+    <p>Kontak: <a href="mailto:kegiatan@example.com">kegiatan@example.com</a></p>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
